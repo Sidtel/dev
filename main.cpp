@@ -20,10 +20,10 @@ int main() {
   CROW_ROUTE(app, "/employee").name("create_employee").methods("POST"_method)([](){
    crow::json::wvalue response;
 
-    // Get the JSON payload from the request body
+   
     auto payload = crow::json::load(crow::request_body);
 
-    // Validate the payload
+    
     if (!payload) {
         response["error"] = "Invalid JSON payload";
         return crow::response(400, response);
